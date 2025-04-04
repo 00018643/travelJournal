@@ -1,0 +1,5 @@
+so, the website is all about users creating the travel notes, describing their experience, the place they traveled to, describing the location of the place, like the weather and stuff, users can create notes, update notes, and delete them if they wish, the main page fetches only the notes of the logged in user, there is conditional in html file. There is also log in and registering features. And plus users can update their email value for their profile. P.S to use the website, please register or log in, others you will not be able to create notes. So the list of dependencies: jsonwebtoken bcrypt dotenv express ejs body-parser nodemon. The structure consists of the 3 layer of logic, starting from routes -> controllers -> services each doing their own job for crud functionality. There is also public folder for css styling and views folder for html templates. There is also middleware for redirecting and the middleware that sets the user object for all the html templates, so that I would access the user in html.
+
+The link to github repo: 
+
+THe link to public website: 

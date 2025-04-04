@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile - My Travel Journal</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>My Travel Journal</h1>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/notes/create">Create a New Note</a>
+          <% if (user) { %>
+            <a href="/profile/<%= user.id %>" class="btn btn-profile">Profile</a>
+            <a href="/logout" class="btn btn-logout">Logout</a>
+          <% } %>
+        </nav>
+      </header>
+
+  <main>
+    <section class="form-section">
+      <h2>User Profile</h2>
+      <p>User ID: <%= userId %></p>
+      <% if (error) { %>
+        <p class="error-message" style="color: red;"><%= error %></p>
+      <% } %>
+      <% if (success) { %>
+        <p class="success-message" style="color: green;"><%= success %></p>
+      <% } %>
+      <% if (userData) { %>
+        <form action="/profile/<%= userId %>" method="POST" class="auth-form">
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="<%= userData.email %>" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Update Email</button>
+        </form>
+      <% } else { %>
+        <p>User not found.</p>
+      <% } %>
+    </section>
+  </main>
+</body>
+</html>

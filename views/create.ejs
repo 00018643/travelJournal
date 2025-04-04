@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Note - My Travel Journal</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <h1>My Travel Journal</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/notes/create">Create a New Note</a>
+      <% if (user) { %>
+        <a href="/profile/<%= user.id %>" class="btn btn-profile">Profile</a>
+        <a href="/logout" class="btn btn-logout">Logout</a>
+      <% } %>
+    </nav>
+  </header>
+
+  <main>
+    <section class="form-section">
+      <h2>Create a New Note</h2>
+      <p>Hello, <%= user ? user.email : 'Guest' %></p>
+      <form action="/notes" method="POST" class="auth-form two-column-form"> 
+        <% if (user) { %>
+          <input type="hidden" name="user_id" value="<%= user.id %>">
+        <% } %>
+        
+        <div class="form-group">
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title" required>
+        </div>
+        <div class="form-group">
+          <label for="city">City:</label>
+          <input type="text" id="city" name="city" required>
+        </div>
+        <div class="form-group">
+          <label for="country">Country:</label>
+          <input type="text" id="country" name="country" required>
+        </div>
+        <div class="form-group">
+          <label for="latitude">Latitude:</label>
+          <input type="number" step="any" id="latitude" name="latitude" required>
+        </div>
+        <div class="form-group">
+          <label for="longitude">Longitude:</label>
+          <input type="number" step="any" id="longitude" name="longitude" required>
+        </div>
+        <div class="form-group textarea-full">
+          <label for="experience">Experience:</label>
+          <textarea id="experience" name="experience" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="weather_temperature">Temperature (°C):</label>
+          <input type="number" id="weather_temperature" name="weather[temperature]" required>
+        </div>
+        <div class="form-group">
+          <label for="weather_condition">Weather Condition:</label>
+          <input type="text" id="weather_condition" name="weather[condition]" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Create Note</button>
+      </form>
+    </section>
+  </main>
+
+</body>
+</html>

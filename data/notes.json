@@ -1,0 +1,70 @@
+[
+  {
+    "id": "2abcxg923",
+    "user_id": "483846a9-d49b-4f11-a6df-c641c797702c",
+    "title": "Hiking in the Swiss Alps",
+    "location": {
+      "city": "Zermatt",
+      "country": "Switzerland",
+      "latitude": 46.0207,
+      "longitude": 7.7491
+    },
+    "experience": "Breathtaking views and fresh mountain air. The Matterhorn was majestic, and the trails were peaceful and scenic.",
+    "weather": {
+      "temperature": "18",
+      "condition": "Clear"
+    },
+    "updated_date": "2025-04-04"
+  },
+  {
+    "id": "3lmnwe891",
+    "user_id": "483846a9-d49b-4f11-a6df-c641c797702c",
+    "title": "Beach Vibes in Bali",
+    "location": {
+      "city": "Uluwatu",
+      "country": "Indonesia",
+      "latitude": -8.8296,
+      "longitude": 115.0866
+    },
+    "experience": "Spent the day surfing and watching the sunset at Uluwatu beach. Great food and even better company.",
+    "weather": {
+      "temperature": "31",
+      "condition": "Partly Cloudy"
+    },
+    "updated_date": "2025-04-04"
+  },
+  {
+    "id": "4xyz98374",
+    "user_id": "483846a9-d49b-4f11-a6df-c641c797702c",
+    "title": "Tokyo Food Adventure",
+    "location": {
+      "city": "Tokyo",
+      "country": "Japan",
+      "latitude": 35.6895,
+      "longitude": 139.6917
+    },
+    "experience": "Tried everything from sushi to street ramen. Tsukiji market was overwhelming but a must-see. So much culture and flavor!",
+    "weather": {
+      "temperature": "18",
+      "condition": "Rainy"
+    },
+    "updated_date": "2025-04-01"
+  },
+  {
+    "id": "5ghj43241",
+    "user_id": "483846a9-d49b-4f11-a6df-c641c797702c",
+    "title": "Desert Safari in Dubai",
+    "location": {
+      "city": "Dubai",
+      "country": "UAE",
+      "latitude": 25.276987,
+      "longitude": 55.296249
+    },
+    "experience": "Went dune bashing, rode camels, and watched a fire show under the stars. Such an exhilarating experience!",
+    "weather": {
+      "temperature": "35",
+      "condition": "Hot"
+    },
+    "updated_date": "2025-03-30"
+  }
+]

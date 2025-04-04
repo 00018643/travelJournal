@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Notes - My Travel Journal</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <h1>My Travel Journal</h1>
+    <nav>
+      <a href="/">Home</a>
+    
+      <a href="/notes/create">Create a New Note</a>
+      <% if (user) { %>
+        <a href="/profile/<%= user.id %>" class="btn btn-profile">Profile</a>
+        <a href="/logout" class="btn btn-logout">Logout</a>
+      <% } %>
+    </nav>
+  </header>
+
+  <main>
+    <section class="notes-section">
+      <h2>All Travel Notes</h2>
+      <% if (notes.length > 0) { %>
+        <div class="notes-grid">
+          <% notes.forEach(note => { %>
+            <% if (user.id === note.user_id) { %> 
+              <div class="note-card">
+                <h3><%= note.title %> (ID: <%= note.id %>)</h3>
+                <p><strong>Location:</strong> <%= note.location.city %>, <%= note.location.country %></p>
+                <p><strong>Coordinates:</strong> <%= note.location.latitude %>, <%= note.location.longitude %></p>
+                <p><strong>Weather:</strong> <%= note.weather.temperature %>°C - <%= note.weather.condition %></p>
+                <p><strong>Experience:</strong></p>
+                <p><%= note.experience %></p>
+                <p><strong>Created on:</strong> <%= note.created_date %></p>
+                <div class="note-actions">
+                  <a href="/notes/<%= note.id %>/edit" class="btn btn-edit">Edit</a>
+                  <form action="/notes/<%= note.id %>/delete" method="POST" style="display: inline;">
+                    <button type="submit" class="btn btn-delete">Delete</button>
+                  </form>
+                </div>
+              </div>
+            <% } %>
+          <% }) %>
+        </div>
+      <% } else { %>
+        <p class="no-notes">No travel notes available yet. <a href="/notes/create">Create one now!</a></p>
+      <% } %>
+    </section>
+  </main>
+</body>
+</html>
